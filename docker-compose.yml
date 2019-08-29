@@ -7,6 +7,6 @@ services:
       dockerfile: Dockerfile_node
     volumes:
      - ./:/usr/src/app
-    command: sh -c "cd bnavi-hp && yarn start"
+    command: sh -c "cd bnavi-hp && yarn install&& yarn start"
     ports:
      - "3000:3000"
