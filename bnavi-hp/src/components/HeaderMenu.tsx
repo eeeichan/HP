@@ -9,6 +9,11 @@ import Box from '@material-ui/core/Box';
 import Home from './Home';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { ThemeProvider } from '@material-ui/styles';
+import PressRelease from './PressRelease';
+import Company from './Company';
+import PrivacyPolicy from './PrivacyPolicy';
+import Recruit from './Recruit';
+import Inquiry from './Inquiry';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -44,8 +49,11 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     headerBody: {
       flexGrow: 1,
-      backgroundColor: blueGrey[900],
+      backgroundColor: blueGrey[900]
       // backgroundColor: theme.palette.background.paper,
+    },
+    headerTab: {
+      margin: '0 auto',
     },
     Tab: {
       color: blueGrey[50]
@@ -77,7 +85,7 @@ export default function SimpleTabs() {
       <ThemeProvider theme={theme}>
         <AppBar position="static" color="primary">
           <h1>ビューティーナビ株式会社</h1>
-          <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" textColor="white">
+          <Tabs className={classes.headerTab} value={value} onChange={handleChange} aria-label="simple tabs example" textColor="white">
             <Tab label="Home" {...a11yProps(0)} />
             <Tab label="Press Release" {...a11yProps(1)} />
             <Tab label="Recruit" {...a11yProps(2)} />
@@ -90,19 +98,19 @@ export default function SimpleTabs() {
           <Home />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Press Release
+          <PressRelease />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Recruit
+          <Recruit />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          Company
+          <Company />
         </TabPanel>
         <TabPanel value={value} index={4}>
-          Privacy policy
+          <PrivacyPolicy />
         </TabPanel>
         <TabPanel value={value} index={5}>
-          Inquiry
+          <Inquiry />
         </TabPanel>
       </ThemeProvider>
     </div>

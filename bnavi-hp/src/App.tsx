@@ -25,7 +25,7 @@ type Props = WithStyles<typeof styles>;
 // App Component を定義
 const App: React.FC<Props> = ({ classes }: Props) => (
   <div className={classes.root}>
-    <MainComponent title="ビューティーナビ株式会社" />
+    <MainComponent />
   </div>
 );
 
