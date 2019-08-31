@@ -7,13 +7,18 @@ import withStyles, {
 } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 
+import HeaderMenu from './HeaderMenu';
+import blueGrey from '@material-ui/core/colors/blueGrey';
+
+
 const styles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
-      textAlign: "center"
+      textAlign: "center",
+      backgroundColor: blueGrey[900]
     },
     header: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: blueGrey[900],
       boxShadow: theme.shadows[2],
       padding: theme.spacing(2),
     },
@@ -42,12 +47,12 @@ class MainComponent extends React.Component<Props, State> {
   };
 
   public render() {
-    const { classes, title } = this.props;
+    const { classes } = this.props;
     const { counter } = this.state;
     return (
       <div className={classes.root}>
         <div className={classes.header}>
-          {title || "My Third TS Component"}
+          <HeaderMenu/>
         </div>
         <div>
           <span className={classes.counter}>{counter}</span>
