@@ -6,21 +6,18 @@ import withStyles, {
   StyleRules
 } from "@material-ui/core/styles/withStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
+// import blueGrey from '@material-ui/core/colors/blueGrey';
 
 import HeaderMenu from './HeaderMenu';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import FooterMenu from './FooterMenu';
+import Contents from './Contents';
 
 
 const styles = (theme: Theme): StyleRules =>
   createStyles({
     root: {
       textAlign: "center",
-      backgroundColor: blueGrey[900]
-    },
-    header: {
-      backgroundColor: blueGrey[900],
-      boxShadow: theme.shadows[2],
-      padding: theme.spacing(2),
+      backgroundColor: theme.palette.background.paper,
     },
     counter: {
       fontSize: 60
@@ -39,6 +36,8 @@ class MainComponent extends React.Component<Props> {
       <div className={classes.root}>
         <div className={classes.header}>
           <HeaderMenu/>
+          <Contents />
+          <FooterMenu />
         </div>
       </div>
     );

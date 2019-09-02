@@ -1,0 +1,173 @@
+/* keyframes */
+@keyframes changeMainImage {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  33% {
+    opacity: 0.1;
+  }
+  35% {
+    opacity: 0;
+  }
+}
+@keyframes changeMainImageLast {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 0 !important;
+  line-height: 0;
+}
+.main__img {
+  display: block;
+  margin: auto;
+  font-size: 0 !important;
+  line-height: 0;
+  display: block;
+}
+.main__img.no1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  opacity: 0;
+
+  animation-name: changeMainImage;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+.main__img.no2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+
+  animation-name: changeMainImage;
+  animation-delay: 6.5s;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+.main__img.no3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+
+  animation-name: changeMainImage;
+  animation-delay: 13s;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+.main__img.no4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+
+  animation-name: changeMainImageLast;
+  animation-delay: 19.5s;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+
+
+.main {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 0 !important;
+  line-height: 0;
+}
+.main__img {
+  display: block;
+  margin: auto;
+  font-size: 0 !important;
+  line-height: 0;
+  display: block;
+}
+.main__img.no1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  opacity: 0;
+ 
+  animation-name: changeMainImage;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+.main__img.no2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+ 
+  animation-name: changeMainImage;
+  animation-delay: 6.5s;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+.main__img.no3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+ 
+  animation-name: changeMainImage;
+  animation-delay: 13s;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}
+.main__img.no4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+ 
+  animation-name: changeMainImageLast;
+  animation-delay: 19.5s;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+}

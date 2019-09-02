@@ -3,40 +3,36 @@ import { makeStyles, Theme, createStyles, createMuiTheme } from '@material-ui/co
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+// import Typography from '@material-ui/core/Typography';
+// import Box from '@material-ui/core/Box';
 
-import Home from './Home';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { ThemeProvider } from '@material-ui/styles';
-import PressRelease from './PressRelease';
-import Company from './Company';
-import PrivacyPolicy from './PrivacyPolicy';
-import Recruit from './Recruit';
-import Inquiry from './Inquiry';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: any;
-  value: any;
-}
 
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
 
-  return (
-    <Typography
-      component="div"
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      <Box p={3}>{children}</Box>
-    </Typography>
-  );
-}
+// interface TabPanelProps {
+//   children?: React.ReactNode;
+//   index: any;
+//   value: any;
+// }
+
+// function TabPanel(props: TabPanelProps) {
+//   const { children, value, index, ...other } = props;
+
+//   return (
+//     <Typography
+//       component="div"
+//       role="tabpanel"
+//       hidden={value !== index}
+//       id={`simple-tabpanel-${index}`}
+//       aria-labelledby={`simple-tab-${index}`}
+//       {...other}
+//     >
+//       <Box p={3}>{children}</Box>
+//     </Typography>
+//   );
+// }
 
 function a11yProps(index: any) {
   return {
@@ -47,19 +43,28 @@ function a11yProps(index: any) {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    header: {
+      backgroundColor: theme.palette.background.paper,
+    },
     headerBody: {
-      flexGrow: 1,
-      backgroundColor: blueGrey[900]
-      // backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.background.paper,
+      width: '100%',
+      display: 'flex'
+    },
+    headerLogo: {
+      width: '100%',
+      textAlign: 'left',
+      marginLeft: '10px',
+      color: blueGrey[900]
+    },
+    headerMenuBar: {
+      width: '100%',
+      height: '100%',
+      paddingTop: '15px',
+      color: blueGrey[900]
     },
     headerTab: {
       margin: '0 auto',
-    },
-    Tab: {
-      color: blueGrey[50]
-    },
-    h1: {
-      color: blueGrey[50]
     }
   }),
 );
@@ -81,37 +86,23 @@ export default function SimpleTabs() {
   
 
   return (
-    <div className={classes.headerBody}>
+    <div className={classes.header}>
       <ThemeProvider theme={theme}>
         <AppBar position="static" color="primary">
-          <h1>ビューティーナビ株式会社</h1>
-          <Tabs className={classes.headerTab} value={value} onChange={handleChange} aria-label="simple tabs example" textColor="white">
-            <Tab label="Home" {...a11yProps(0)} />
-            <Tab label="Press Release" {...a11yProps(1)} />
-            <Tab label="Recruit" {...a11yProps(2)} />
-            <Tab label="Company" {...a11yProps(3)} />
-            <Tab label="Privacy policy" {...a11yProps(4)} />
-            <Tab label="Inquiry" {...a11yProps(5)} />
-          </Tabs>
+          <div className={classes.headerBody}>
+            <div className={classes.headerLogo}>
+              <h1>Beauty Navi, Inc.</h1>
+            </div>
+            <div className={classes.headerMenuBar}>
+              <Tabs className={classes.headerTab} value={value} onChange={handleChange} aria-label="simple tabs example" textColor="white">
+                <Tab label="About" {...a11yProps(0)} />
+                <Tab label="News" {...a11yProps(1)} />
+                <Tab label="Service" {...a11yProps(2)} />
+                <Tab label="Career" {...a11yProps(3)} />
+              </Tabs>
+            </div>
+          </div>
         </AppBar>
-        <TabPanel value={value} index={0}>
-          <Home />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <PressRelease />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Recruit />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <Company />
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          <PrivacyPolicy />
-        </TabPanel>
-        <TabPanel value={value} index={5}>
-          <Inquiry />
-        </TabPanel>
       </ThemeProvider>
     </div>
   );

@@ -7,6 +7,8 @@ import withStyles, {
 import createStyles from "@material-ui/core/styles/createStyles";
 import blueGrey from '@material-ui/core/colors/blueGrey';
 
+import Map from './GoogleMap';
+
 const styles = (theme: Theme): StyleRules =>
   createStyles({
     mainBody: {
@@ -22,16 +24,17 @@ interface Props extends WithStyles<typeof styles> {
 }
 
 
-class MainComponent extends React.Component<Props> {
+class About extends React.Component<Props> {
 
   public render() {
     const { classes } = this.props;
     return (
       <div className={classes.mainBody}>
-        <h1>プレスリリース...</h1>
+        <h3>Access</h3>
+        <Map />
       </div>
     );
   }
 }
 
-export default withStyles(styles)(MainComponent);
+export default withStyles(styles)(About);

@@ -22,16 +22,16 @@ interface Props extends WithStyles<typeof styles> {
 }
 
 
-class MainComponent extends React.Component<Props> {
+class Career extends React.Component<Props> {
 
   public render() {
     const { classes } = this.props;
     return (
       <div className={classes.mainBody}>
-        <h1>採用情報...</h1>
+        <h1>Career...</h1>
       </div>
     );
   }
 }
 
-export default withStyles(styles)(MainComponent);
+export default withStyles(styles)(Career);

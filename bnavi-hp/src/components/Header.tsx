@@ -86,10 +86,10 @@ export default function Header() {
 
   return (
     <div>
-      <Grid item={true} xs={12} sm={6}>
+      <Grid item={true} xs={6} sm={6}>
         <h3>ビューティーナビ株式会社</h3>
       </Grid>
-      <Grid item={true} xs={12} sm={6}>
+      <Grid item={true} xs={6} sm={6}>
         <Button variant="outlined" className={classes.button} onClick={toggleDrawer('top', true)} >
           MENU
         </Button>
