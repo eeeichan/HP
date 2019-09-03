@@ -17,6 +17,7 @@ const styles = (theme: Theme): StyleRules =>
     companyBody: {
       textAlign: "center",
       backgroundColor: blueGrey[900],
+      height: '100%'
     },
     tableCell: {
       color: blueGrey[50]

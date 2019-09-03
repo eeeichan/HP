@@ -8,12 +8,15 @@ import createStyles from "@material-ui/core/styles/createStyles";
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { Grid, Paper } from '@material-ui/core';
 import Company from './Company';
+import Access from './Access';
 
 const styles = (theme: Theme): StyleRules =>
   createStyles({
     footerBody: {
       textAlign: "center",
       backgroundColor: blueGrey[900],
+      width: '100%',
+      height: '100%',
       minHeight: '100%'
     },
     footerTitle: {
@@ -24,7 +27,9 @@ const styles = (theme: Theme): StyleRules =>
       backgroundColor: blueGrey[900]
     },
     paper: {
-      height: '100%',
+      width: '100%',
+      paddingRight: '5px',
+      paddingLeft: '5px',
       color: blueGrey[50],
       backgroundColor: blueGrey[900]
     }
@@ -41,7 +46,7 @@ class FooterMenu extends React.Component<Props> {
     const { classes } = this.props;
     return (
       <div className={classes.footerBody}>
-        <Grid container={true} spacing={5}>
+        <Grid container={true}>
           <Grid item={true} xs={true}>
             <Paper className={classes.paper}>
               <h1 className={classes.footerTitle}>BeautyNavi, Inc</h1>
@@ -53,7 +58,9 @@ class FooterMenu extends React.Component<Props> {
             </Paper>
           </Grid>
           <Grid item={true} xs={true}>
-            <Paper className={classes.paper}><h1>Q&A</h1></Paper>
+            <Paper className={classes.paper}>
+              <Access />
+            </Paper>
           </Grid>
         </Grid>
       </div>

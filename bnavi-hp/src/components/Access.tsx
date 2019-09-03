@@ -7,10 +7,13 @@ import withStyles, {
 import createStyles from "@material-ui/core/styles/createStyles";
 import blueGrey from '@material-ui/core/colors/blueGrey';
 
+import GoogleMap from './GoogleMap';
+
 
 const styles = (theme: Theme): StyleRules =>
   createStyles({
-    mainBody: {
+    accessbody: {
+      width: '100%',
       textAlign: "center",
       backgroundColor: blueGrey[900]
     },
@@ -28,9 +31,9 @@ class About extends React.Component<Props> {
   public render() {
     const { classes } = this.props;
     return (
-      <div className={classes.mainBody}>
+      <div className={classes.accessBody}>
         <h3>Access</h3>
-        <h4>MAP AREA</h4>
+        <GoogleMap />
       </div>
     );
   }
