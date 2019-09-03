@@ -7,7 +7,6 @@ import withStyles, {
 import createStyles from "@material-ui/core/styles/createStyles";
 import blueGrey from '@material-ui/core/colors/blueGrey';
 
-import Map from './GoogleMap';
 
 const styles = (theme: Theme): StyleRules =>
   createStyles({
@@ -31,7 +30,7 @@ class About extends React.Component<Props> {
     return (
       <div className={classes.mainBody}>
         <h3>Access</h3>
-        <Map />
+        <h4>MAP AREA</h4>
       </div>
     );
   }
